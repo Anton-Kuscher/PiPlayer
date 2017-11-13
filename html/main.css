@@ -7,7 +7,7 @@ body {
 .botbar {
   width: 100%;
   height: 8vh;
-  background-color: orange;
+  background-color: #0115c7;
   position: fixed;
   top: 92%;
   margin: 0;
@@ -16,7 +16,7 @@ body {
 .topbar {
   width: 100%;
   height: 8vh;
-  background-color: orange;
+  background-color: #0115c7;
   position: fixed;
   margin: 0;
   padding: 0;
@@ -27,7 +27,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
-  margin-left: 1%;
+  margin-left: 9vh;
 }
 
 a {
@@ -50,7 +50,7 @@ div.titlebox {
   margin-left: 1%;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: green;
+  background-color: #c3c3c3;
   overflow: hidden;
   border-radius: 5px;
   border-style: hidden;
@@ -76,8 +76,8 @@ div.titlebox button {
   color: black;
   border-width: 2px;
   border-radius: 5px;
-  border-color: orange;
-  background-color: white;
+  border-color: #0115c7;
+  background-color: #5457b0;
   box-shadow: none;
   border-style: solid;
   margin-left: auto;
@@ -89,7 +89,7 @@ div.titlebox button {
 
 div.titlebox button:hover {
   border-color: black;
-  background-color: orange;
+  background-color: #0115c7;
 }
 
 div.buttoncontain form button {
@@ -115,7 +115,23 @@ div.botbar form button img {
 }
 
 div.botbar form button {
-  background-color: orange;
+  background-color: #0115c7;
   height: 7vh;
   border-style: hidden;
+}
+
+div.botbar div.title {
+  float: left;
+}
+
+div.botbar form {
+  width: 50%;
+  float: left;
+}
+
+div.topbar img {
+  height: 8vh;
+  float: left;
+  margin: 0;
+  margin-left: 0.5vh;
 }

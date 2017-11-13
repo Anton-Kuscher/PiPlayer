@@ -1,6 +1,7 @@
 $textcolor: black
-$barcolor: orange
+$barcolor: rgba(1, 21, 199, 1)
 $bgcolor: grey
+$listcolor: rgba(195, 195, 195, 1)
 
 body
     min-height: 100%
@@ -28,7 +29,7 @@ body
     top: 50%
     transform: translateY(-50%)
     margin: 0
-    margin-left: 1%
+    margin-left: 9vh
 a
     text-decoration: none
     color: $textcolor
@@ -47,7 +48,7 @@ div.titlebox
     margin-left: 1%
     margin-top: 10px
     margin-bottom: 10px
-    background-color: green
+    background-color: $listcolor
     overflow: hidden
     border-radius: 5px
     border-style: hidden
@@ -69,7 +70,7 @@ div.titlebox button
     border-width: 2px
     border-radius: 5px
     border-color: $barcolor
-    background-color: white
+    background-color: rgba(84, 87, 176, 1)
     box-shadow: none
     border-style: solid
     margin-left: auto
@@ -103,3 +104,14 @@ div.botbar form button
     background-color: $barcolor
     height: 7vh
     border-style: hidden
+div.botbar div.title
+    float: left
+div.botbar form
+    width: 50%
+    float: left
+
+div.topbar img
+    height: 8vh
+    float: left
+    margin: 0
+    margin-left: 0.5vh
