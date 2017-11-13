@@ -11,9 +11,6 @@
         $result = mysqli_query($con , "SELECT * FROM title_list");
 
         #Function for button Click
-        function Play(){
-            exec('mpc play');
-        };
         function Stop(){
             exec('mpc stop');
         };
@@ -33,12 +30,9 @@
         }
 
         #Check for button Click
-        if (isset($_POST['play'])) {
-            Play();
-        };
         if (isset($_POST['stop'])) {
             Stop();
-        };
+        }
         if (isset($_POST['toggle'])) {
             Toggle();
         }
@@ -63,10 +57,10 @@
         <!-- The Bar on the bottom of the screen -->
         <div class="botbar">
             <form action="" method="POST">
-                <input type="submit" name="toggle" value="Play/Pause">
-                <input type="submit" name="VolUp" value="Volume Up">
-                <input type="submit" name="VolDown" value="Volume Down">
-                <input type="submit" name="stop" value="stop">
+                <button type="submit" name="toggle"><img src="https://www2.pic-upload.de/img/34288494/playbutton.png" alt=""></button>
+                <button type="submit" name="stop"><img src="https://www2.pic-upload.de/img/34288713/stopbutton.png" alt=""></button>
+                <button type="submit" name="VolUp"><img src="https://www2.pic-upload.de/img/34288731/VolUpbutton.png" alt=""></button>
+                <button type="submit" name="VolDown"><img src="https://www2.pic-upload.de/img/34288730/VolDownbutton.png" alt=""></button>
             </form>
         </div>
 
@@ -76,13 +70,15 @@
             <?php
             #For every entry in the database list do ...
             while ($row=mysqli_fetch_array($result)) {
-                echo "<div class='titlebox'><div class='inf'>
-                ".$row['Name']."
-                </div><div>
-                <form action='' method='POST'>
-                    <button name='play_song' value='".$row['filename']."' type='submit'>Play</button>
-                </form>
-                </div>
+                echo "<div class='titlebox'>
+                    <div class='namecontain'>
+                    <p>".$row['Name']."</p>
+                    </div>
+                    <div class='buttoncontain'>
+                        <form action='' method='POST'>
+                            <button name='play_song' value='".$row['filename']."' type='submit'><b>Play</b></button>
+                        </form>
+                    </div>
                 </div>
 
                 ";
