@@ -4,13 +4,16 @@
         <meta charset="utf-8">
         <title>PiPlayer</title>
         <link rel="stylesheet" href="main.css">
-
+        <link rel="icon" href="https://www2.pic-upload.de/img/34289012/icon.png">
+        
         <?php
         #Make Connection to database
         $con = mysqli_connect("localhost","phpmyadmin","raspipass","PiPlayer");
         $result = mysqli_query($con , "SELECT * FROM title_list");
-        if (isset($_GET['play_song'])) {
-            $url = $_GET['play_song'];
+
+        #test for play now
+        if (isset($_POST['play_song'])) {
+            $url = $_POST['play_song'];
             $name = mysqli_query($con , "SELECT * FROM title_list WHERE filename='$url'");
         };
 
@@ -34,20 +37,20 @@
         }
 
         #Check for button Click
-        if (isset($_GET['stop'])) {
+        if (isset($_POST['stop'])) {
             Stop();
         }
-        if (isset($_GET['toggle'])) {
+        if (isset($_POST['toggle'])) {
             Toggle();
         }
-        if (isset($_GET['VolUp'])) {
+        if (isset($_POST['VolUp'])) {
             VolUp();
         }
-        if (isset($_GET['VolDown'])) {
+        if (isset($_POST['VolDown'])) {
             VolDown();
         }
-        if (isset($_GET['play_song'])) {
-            play_a_song($_GET['play_song']);
+        if (isset($_POST['play_song'])) {
+            play_a_song($_POST['play_song']);
         }
 
 
@@ -57,11 +60,13 @@
         <!-- The Bar ontop of the screen  -->
         <div class="topbar">
             <a href="/"><h1>PiPlayer</h1></a>
+            <!-- Logo -->
             <img src="https://www2.pic-upload.de/img/34289012/icon.png" alt="">
         </div>
         <!-- The Bar on the bottom of the screen -->
         <div class="botbar">
-            <form action="" method="GET">
+            <form action="" method="POST">
+                <!-- botbar controllbuttons -->
                 <button type="submit" name="toggle"><img src="https://www2.pic-upload.de/img/34288494/playbutton.png" alt=""></button>
                 <button type="submit" name="stop"><img src="https://www2.pic-upload.de/img/34288713/stopbutton.png" alt=""></button>
                 <button type="submit" name="VolUp"><img src="https://www2.pic-upload.de/img/34288731/VolUpbutton.png" alt=""></button>
@@ -69,6 +74,7 @@
             </form>
             <div class="title">
                 <p><?php
+                #show last played
                 while ($row2=mysqli_fetch_array($name)) {
                     // echo $row2['Name'];
                     $lastplayed = $row2['Name'];
@@ -89,7 +95,7 @@
                     <p>".$row['Name']."</p>
                     </div>
                     <div class='buttoncontain'>
-                        <form action='' method='GET'>
+                        <form action='' method='POST'>
                             <button name='play_song' value='".$row['filename']."' type='submit'><b>Play</b></button>
                         </form>
                     </div>
