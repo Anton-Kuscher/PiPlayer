@@ -1,0 +1,46 @@
+html {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #0c56a0;
+}
+
+div.paragraph {
+  background-color: #afafaf;
+  border-width: 1%;
+  border-radius: 7px;
+  padding: 1%;
+  font-size: 19px;
+  border-color: black;
+  border-style: solid;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  align-content: center;
+  text-align: center;
+}
+
+div.paragraph p {
+  text-align: justify;
+  margin: 2%;
+}
+
+.code {
+  background-color: grey;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: black;
+  font-size: 16px;
+  padding: 0.5%;
+  border-width: 1%;
+  width: 90%;
+  padding: 0;
+  margin: 1%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+div.code p {
+  text-align: center;
+  margin: 1%;
+}

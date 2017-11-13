@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+
+    <div class="paragraph">
+        <h1>Setup von Dem Prinzipiellen webserver
+        </h1>
+        <p>Nach der installation von raspbian auf dem System wird ein LAMP (Linux, Apache, MYSQL, PHP) Server installiert um als basis für die webseite zu dienen.</p>
+        <div class="code">
+            <p>sudo apt-get install apache2 php7.0 libapache2-mod-php7.0 mysql-server mysql-client php7.0-mysql phpmyadmin</p>
+        </div>
+
+        <p>damit PHPMYADMIN auch von Apache genutzt werden kann muss noch folgende zeile zu /etc/apache2/apache2.conf hinzugefügt werden.</p>
+
+        <div class="code">
+            <p>Include /etc/phpmyadmin/apache.conf</p>
+        </div>
+
+        <p>Für die bessere Funktionsweise wird der Datenordner des webservers auf PI umgeschrieben um zu ermöglichen, dass automatisierte SFTP-Verbindungen möglich sind (-R sorgt dafür das alle bereits vorhandenen untergeordneten dateien auch betroffen sind)</p>
+
+        <div class="code">
+            <p>sudo chown -R pi /var/www</p>
+        </div>
+
+        <p>um root previlegien in PHPMYADMIN zu erhalten müssen noch folgende befehle ausgeführt werden</p>
+
+        <div class="code">
+            <p>sudo mysql --user=root mysql</p>
+            <p>GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;</p>
+            <p>FLUSH PRIVILEGES;</p>
+         </div>
+
+        <div class="code">
+            <p>sudo usermod -a -G audio www-data</p>
+            <p>sudo apt-get install mpd mpc</p>
+        </div>
+
+      </div>
+
+  </body>
+</html>
