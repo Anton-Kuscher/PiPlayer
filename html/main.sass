@@ -1,7 +1,9 @@
 $textcolor: black
-$barcolor: rgba(1, 21, 199, 1)
+$barcolor: rgba(245,222,179, 1)
 $bgcolor: grey
 $listcolor: rgba(195, 195, 195, 1)
+$button_bg_color: rgba(250,235,215,1)
+
 
 body
     min-height: 100%
@@ -15,6 +17,10 @@ body
     position: fixed
     top: 92%
     margin: 0
+    border: 0
+    border-top: 2px
+    border-style: solid
+
 
 .topbar
     width: 100%
@@ -23,6 +29,9 @@ body
     position: fixed
     margin: 0
     padding: 0
+    border: 0
+    border-bottom: 2px
+    border-style: solid
 
 .topbar h1
     position: absolute
@@ -73,7 +82,7 @@ div.titlebox button
     border-width: 2px
     border-radius: 5px
     border-color: $barcolor
-    background-color: rgba(84, 87, 176, 1)
+    background-color: $button_bg_color
     box-shadow: none
     border-style: solid
     margin-left: auto
@@ -117,10 +126,20 @@ div.botbar form
     float: left
 
 div.topbar img
-    height: 8vh
+    height: 7vh
     float: left
     margin: 0
+    margin-top: 0.5vh
     margin-left: 0.5vh
+
+#reload_iframe
+    position: fixed
+    top: -50px
+    left: 0
+    height: 0
+    width: 0
+
+
 
 @media screen and (max-width: 990px)
     body

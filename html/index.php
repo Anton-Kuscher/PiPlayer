@@ -5,7 +5,7 @@
         <title>PiPlayer</title>
         <link rel="stylesheet" href="main.css">
         <link rel="icon" href="https://www2.pic-upload.de/img/34289012/icon.png">
-        
+
         <?php
         #Make Connection to database
         $con = mysqli_connect("localhost","phpmyadmin","raspipass","PiPlayer");
@@ -16,7 +16,7 @@
             $url = $_POST['play_song'];
             $name = mysqli_query($con , "SELECT * FROM title_list WHERE filename='$url'");
         };
-
+        
         #Function for button Click
         function Stop(){
             exec('mpc stop');
@@ -65,7 +65,7 @@
         </div>
         <!-- The Bar on the bottom of the screen -->
         <div class="botbar">
-            <form action="" method="POST">
+            <form action="" method="POST" target="reload_iframe">
                 <!-- botbar controllbuttons -->
                 <button type="submit" name="toggle"><img src="https://www2.pic-upload.de/img/34288494/playbutton.png" alt=""></button>
                 <button type="submit" name="stop"><img src="https://www2.pic-upload.de/img/34288713/stopbutton.png" alt=""></button>
@@ -87,6 +87,8 @@
         <div class="mainframe">
             <!-- Main Boxes in formes of Text etc... -->
 
+            <iframe id="reload_iframe" src="" name="reload_iframe">testo</iframe>
+
             <?php
             #For every entry in the database list do ...
             while ($row=mysqli_fetch_array($result)) {
@@ -95,7 +97,7 @@
                     <p>".$row['Name']."</p>
                     </div>
                     <div class='buttoncontain'>
-                        <form action='' method='POST'>
+                        <form target='reload_iframe' action='' method='POST'>
                             <button name='play_song' value='".$row['filename']."' type='submit'><b>Play</b></button>
                         </form>
                     </div>
