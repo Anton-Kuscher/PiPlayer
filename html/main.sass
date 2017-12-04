@@ -151,20 +151,49 @@ div.topbar img
     height: 0
     width: 0
 
+body.current
+    padding: 0
+    margin: 0
+    border: 0
+    background-color: $barcolor
+
+p.current
+    margin-left: 5px
+
+div.title iframe
+    height: 7vh
+    width: auto
+    border-style: none
+    margin: 0
+
+
+
 //                       IPAD ADJUSTMENT
 
 @media only screen and (max-device-width : 1024px) and (min-device-width : 768px) and (orientation : portrait)
     body
-        font-size: 250%
+        font-size: 200%
+        width: 100vw
     div.titlebox div.buttoncontain
         width: 20%
     div.titlebox div.namecontain
         width: 80%
     div.botbar form
-        width: 60%
+        width: 50%
     div.titlebox button
         padding: 0
         border-width: 3px
+    div.botbar form button img
+        height: 100%
+        margin-top: 0.5vh
+    div.botbar form button
+        background-color: $barcolor
+        height: 5vh
+        border-style: hidden
+    div.mainframe
+        width: 100vw
+
+
 
 @media only screen and (max-device-width : 1024px) and (min-device-width : 768px) and (orientation : landscape)
     body

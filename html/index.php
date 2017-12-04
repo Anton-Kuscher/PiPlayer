@@ -16,7 +16,7 @@
             $url = $_POST['play_song'];
             $name = mysqli_query($con , "SELECT * FROM title_list WHERE filename='$url'");
         };
-        
+
         #Function for button Click
         function Stop(){
             exec('mpc stop');
@@ -73,21 +73,14 @@
                 <button type="submit" name="VolDown"><img src="https://www2.pic-upload.de/img/34288730/VolDownbutton.png" alt=""></button>
             </form>
             <div class="title">
-                <p><?php
-                #show last played
-                while ($row2=mysqli_fetch_array($name)) {
-                    // echo $row2['Name'];
-                    $lastplayed = $row2['Name'];
-                };
-                echo $lastplayed;
-                ?></p>
+                <iframe src="current.html"></iframe>
             </div>
         </div>
 
         <div class="mainframe">
             <!-- Main Boxes in formes of Text etc... -->
 
-            <iframe id="reload_iframe" src="" name="reload_iframe">testo</iframe>
+            <iframe id="reload_iframe" src="" name="reload_iframe"></iframe>
 
             <?php
             #For every entry in the database list do ...
