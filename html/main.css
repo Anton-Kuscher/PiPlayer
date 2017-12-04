@@ -1,11 +1,11 @@
 @Font-face {
   font-family: 'Sansation';
-  src: url("Sansation.ttf");
+  src: url("fonts/Sansation.ttf");
 }
 
 @Font-face {
   font-family: 'Quantify';
-  src: url("Quantify.ttf");
+  src: url("fonts/Quantify.ttf");
 }
 
 body {
@@ -73,8 +73,7 @@ div.titlebox {
   border-radius: 5px;
   border-style: hidden;
   border-width: 2px;
-  border-color: black;
-  height: 7vh;
+  min-height: 7vh;
 }
 
 div.titlebox div {
@@ -84,6 +83,7 @@ div.titlebox div {
 }
 
 div.titlebox div.buttoncontain {
+  height: inherit;
   width: 10%;
 }
 
@@ -100,15 +100,21 @@ div.titlebox button {
   box-shadow: none;
   border-style: solid;
   margin-left: auto;
-  height: 7vh;
+  min-height: 7vh;
   width: 100%;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  font-family: 'Quantify';
+  height: 100%;
 }
 
 div.titlebox button:hover {
   border-color: black;
   background-color: wheat;
+}
+
+div.buttoncontain form {
+  height: inherit;
 }
 
 div.buttoncontain form button {
@@ -119,7 +125,6 @@ div.namecontain p {
   font-size: 115%;
   margin: 0;
   text-align: justify;
-  text-decoration: underline;
   margin-left: 1%;
   vertical-align: middle;
 }
@@ -164,7 +169,45 @@ div.topbar img {
   width: 0;
 }
 
-@media screen and (max-width: 990px) {
+@media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation: portrait) {
+  body {
+    font-size: 250%;
+  }
+  div.titlebox div.buttoncontain {
+    width: 20%;
+  }
+  div.titlebox div.namecontain {
+    width: 80%;
+  }
+  div.botbar form {
+    width: 60%;
+  }
+  div.titlebox button {
+    padding: 0;
+    border-width: 3px;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation: landscape) {
+  body {
+    font-size: 130%;
+  }
+  div.titlebox div.buttoncontain {
+    width: 20%;
+  }
+  div.titlebox div.namecontain {
+    width: 80%;
+  }
+  div.botbar form {
+    width: 60%;
+  }
+  div.titlebox button {
+    padding: 0;
+    border-width: 3px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px) and (orientation: portrait) {
   body {
     font-size: 250%;
   }
