@@ -1,7 +1,18 @@
+@Font-face {
+  font-family: 'Sansation';
+  src: url("Sansation.ttf");
+}
+
+@Font-face {
+  font-family: 'Quantify';
+  src: url("Quantify.ttf");
+}
+
 body {
   min-height: 100%;
   background-color: grey;
   margin: 0;
+  font-family: "Sansation", "Arial";
 }
 
 .botbar {
@@ -34,6 +45,7 @@ body {
   transform: translateY(-50%);
   margin: 0;
   margin-left: 9vh;
+  font-family: 'Quantify';
 }
 
 a {
