@@ -80,7 +80,7 @@
         <div class="mainframe">
             <!-- Main Boxes in formes of Text etc... -->
 
-            <iframe id="reload_iframe" src="" name="reload_iframe"></iframe>
+            <iframe id="reload_iframe" src="" name="reload_iframe" noscroll="True"></iframe>
 
             <?php
             #For every entry in the database list do ...

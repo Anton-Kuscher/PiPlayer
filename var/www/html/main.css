@@ -176,8 +176,8 @@ body.current {
   background-color: wheat;
 }
 
-p.current {
-  margin-left: 5px;
+p#current {
+  font-size: 100%;
 }
 
 div.title iframe {
@@ -185,6 +185,7 @@ div.title iframe {
   width: auto;
   border-style: none;
   margin: 0;
+  border: 0;
 }
 
 @media only screen and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation: portrait) {
@@ -254,5 +255,12 @@ div.title iframe {
   div.titlebox button {
     padding: 0;
     border-width: 3px;
+  }
+  p.current {
+    font-size: 450%;
+    color: red;
+  }
+  #current {
+    font-size: 400%;
   }
 }
