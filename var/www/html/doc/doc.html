@@ -12,7 +12,17 @@
         </h1>
         <p>Nach der installation von raspbian auf dem System wird ein LAMP (Linux, Apache, MYSQL, PHP) Server installiert um als basis für die webseite zu dienen.</p>
         <div class="code">
-            <p>sudo apt-get install apache2 php7.0 libapache2-mod-php7.0 mysql-server mysql-client php7.0-mysql phpmyadmin</p>
+            <p>sudo apt-get update && sudo apt-get upgrade -y</p>
+            <p>sudo apt-get install apache2 php7.0 libapache2-mod-php7.0 mysql-server mysql-client php7.0-mysql phpmyadmin -y</p>
+            <p>sudo apt-get install screen sysbench htop -y</p>
+            <p>sudo apt-get install gir1.2-glib-2.0 git git-man javascript-common libao-common libao4 libdbus-glib-1-2 liberror-perl libflac8 libgirepository-1.0-1 libjs-jquery libjs-sphinxdoc libjs-underscore libogg0 libspeex1 libvorbis0a libvorbisenc2 libvorbisfile3 python-alsaaudio python-cffi python-cffi-backend python-configparser python-dbus python-gi python-gobject python-gobject-2 python-ply python-pycparser sound-theme-freedesktop vorbis-tools -y</p>
+            <p>sudo su</p>
+            <p>curl -s https://raw.githubusercontent.com/lukasjapan/bt-speaker/master/install.sh | bash</p>
+        </div>
+
+        <p>all installations in one line</p>
+        <div class="code">
+            <p>sudo apt-get update && sudo apt-get upgrade -y && echo "$(tput setaf 1)$(tput bold)Now setting root password$(tput sgr0)" && sudo passwd root && sudo apt-get install screen sysbench htop gir1.2-glib-2.0 git git-man javascript-common libao-common libao4 libdbus-glib-1-2 liberror-perl libflac8 libgirepository-1.0-1 libjs-jquery libjs-sphinxdoc libjs-underscore libogg0 libspeex1 libvorbis0a libvorbisenc2 libvorbisfile3 python-alsaaudio python-cffi python-cffi-backend python-configparser python-dbus python-gi python-gobject python-gobject-2 python-ply python-pycparser sound-theme-freedesktop vorbis-tools mpd mpc apache2 php7.0 libapache2-mod-php7.0 mysql-server mysql-client php7.0-mysql phpmyadmin -y && su - root -c "curl -s https://raw.githubusercontent.com/lukasjapan/bt-speaker/master/install.sh | bash" && sudo usermod -a -G audio www-data && su - root -c "echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf" && sudo chown -R pi /var/www</p>
         </div>
 
         <p>damit PHPMYADMIN auch von Apache genutzt werden kann muss noch folgende zeile zu /etc/apache2/apache2.conf hinzugefügt werden.</p>
@@ -37,7 +47,7 @@
 
         <div class="code">
             <p>sudo usermod -a -G audio www-data</p>
-            <p>sudo apt-get install mpd mpc</p>
+            <p>sudo apt-get install mpd mpc -y</p>
         </div>
 
       </div>

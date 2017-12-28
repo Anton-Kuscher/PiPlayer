@@ -1,7 +1,7 @@
 import os;
 tmp = "";
 tmp2 = "";
-while 1==1:
+while 1 == 1:
 	tmp = tmp = os.popen("mpc current").read();
 	if tmp != tmp2:
 		tmp2 = tmp = os.popen("mpc current").read();
