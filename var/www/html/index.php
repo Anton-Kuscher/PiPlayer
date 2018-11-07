@@ -8,7 +8,7 @@
 
         <?php
         #Make Connection to database
-        $con = mysqli_connect("localhost","phpmyadmin","raspipass","PiPlayer");
+        $con = mysqli_connect("localhost","root","raspipass","PiPlayer");
         $result = mysqli_query($con , "SELECT * FROM title_list");
 
         #test for play now
@@ -87,7 +87,7 @@
             while ($row=mysqli_fetch_array($result)) {
                 echo "<div class='titlebox'>
                     <div class='namecontain'>
-                    <p>".$row['Name']."</p>
+                    <p>".$row['artist']." - ".$row['title']."</p>
                     </div>
                     <div class='buttoncontain'>
                         <form target='reload_iframe' action='' method='POST'>

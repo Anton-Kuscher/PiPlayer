@@ -10,7 +10,7 @@
 
 body {
   min-height: 100%;
-  background-color: grey;
+  background-color: black;
   margin: 0;
   font-family: "Sansation", "Arial";
 }
@@ -18,7 +18,7 @@ body {
 .botbar {
   width: 100%;
   height: 8vh;
-  background-color: wheat;
+  background-color: grey;
   position: fixed;
   top: 92%;
   margin: 0;
@@ -30,7 +30,7 @@ body {
 .topbar {
   width: 100%;
   height: 8vh;
-  background-color: wheat;
+  background-color: grey;
   position: fixed;
   margin: 0;
   padding: 0;
@@ -95,8 +95,8 @@ div.titlebox button {
   color: black;
   border-width: 2px;
   border-radius: 5px;
-  border-color: wheat;
-  background-color: antiquewhite;
+  border-color: #c3c3c3;
+  background-color: grey;
   box-shadow: none;
   border-style: solid;
   margin-left: auto;
@@ -109,8 +109,9 @@ div.titlebox button {
 }
 
 div.titlebox button:hover {
-  border-color: black;
-  background-color: wheat;
+  border-color: yellow;
+  background-color: black;
+  color: white;
 }
 
 div.buttoncontain form {
@@ -139,7 +140,7 @@ div.botbar form button img {
 }
 
 div.botbar form button {
-  background-color: wheat;
+  background-color: grey;
   height: 7vh;
   border-style: hidden;
 }
@@ -173,11 +174,15 @@ body.current {
   padding: 0;
   margin: 0;
   border: 0;
-  background-color: wheat;
+  background-color: grey;
 }
 
-p#current {
+p.current {
   font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-top: 5px;
 }
 
 div.title iframe {
@@ -211,7 +216,7 @@ div.title iframe {
     margin-top: 0.5vh;
   }
   div.botbar form button {
-    background-color: wheat;
+    background-color: grey;
     height: 5vh;
     border-style: hidden;
   }

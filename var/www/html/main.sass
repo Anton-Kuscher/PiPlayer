@@ -4,11 +4,18 @@
 @Font-face
     font-family: 'Quantify'
     src: url('fonts/Quantify.ttf')
+// $textcolor: black
+// $barcolor: rgba(245,222,179, 1)
+// $bgcolor: grey
+// $listcolor: rgba(195, 195, 195, 1)
+// $button_bg_color: rgba(250,235,215,1)
+// $Font : 'Sansation','Arial'
+
 $textcolor: black
-$barcolor: rgba(245,222,179, 1)
-$bgcolor: grey
+$barcolor: grey
+$bgcolor: black
 $listcolor: rgba(195, 195, 195, 1)
-$button_bg_color: rgba(250,235,215,1)
+$button_bg_color: grey
 $Font : 'Sansation','Arial'
 
 body
@@ -89,7 +96,7 @@ div.titlebox button
     color: black
     border-width: 2px
     border-radius: 5px
-    border-color: $barcolor
+    border-color: $listcolor
     background-color: $button_bg_color
     box-shadow: none
     border-style: solid
@@ -102,8 +109,9 @@ div.titlebox button
     height: 100%
 
 div.titlebox button:hover
-    border-color: black
-    background-color: $barcolor
+    border-color: yellow
+    background-color: $bgcolor
+    color: white
 
 div.buttoncontain form
     height: inherit
@@ -157,8 +165,12 @@ body.current
     border: 0
     background-color: $barcolor
 
-p#current
+p.current
     font-size: 100%
+    margin: 0
+    padding: 0
+    border: 0
+    margin-top: 5px
 
 div.title iframe
     height: 7vh

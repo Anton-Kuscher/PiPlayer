@@ -1,5 +1,5 @@
 #FOR THIS BENCHMARK TO WORK YOU NEED TO HAVE SYSBENCH AND SPEEDTEST-CLI INSTALLED
-sudo apt-get install sysbench speedtest-cli
+sudo apt-get install sysbench speedtest-cli -y
 
 #=================================== CONFIG ====================================
 
@@ -15,7 +15,8 @@ io_filesize="1024"
 output_filename="Benchmark_Output"
 
 #===============================================================================
-
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+chmod +x speedtest-cli
 clear
 echo "$(tput bold)[ $(date "+%H:%M:%S") ] $(tput setaf 2)$(tput bold)[ Beginning Benchmark ]$(tput sgr0)
 ";
@@ -79,7 +80,7 @@ echo "
 #INTERNET SPEED BENCHMARK
 echo "
 $(tput bold)[ $(date "+%H:%M:%S") ] $(tput setaf 2)$(tput bold)Starting Internet Benchmark ...$(tput sgr0)";
-speedtest-cli | egrep "Download:|Upload:" >> $output_filename.txt;
+./speedtest-cli | egrep "Download:|Upload:" >> $output_filename.txt;
 echo "" >> $output_filename.txt
 
 #DONE
@@ -88,3 +89,4 @@ echo "
 $(tput sgr0)$(tput bold)[ $(date "+%H:%M:%S") ]$(tput setaf 2) | $(tput sgr 0 1)$(tput setaf 3)FINISHED Benchmark$(tput sgr0)$(tput setaf 2) |
              +====================+$(tput sgr0)
 ";
+rm speedtest-cli
