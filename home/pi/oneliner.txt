@@ -1,0 +1,8 @@
+sudo su && apt-get update && apt-get upgrade -y && hostname PiPlayer && apt-get install screen htop gir1.2-glib-2.0 git git-man javascript-common libao-common libao4 libdbus-glib-1-2 liberror-perl libflac8 libgirepository-1.0-1 libjs-jquery libjs-sphinxdoc libjs-underscore libogg0 libspeex1 libvorbis0a libvorbisenc2 libvorbisfile3 python-alsaaudio python-cffi python-cffi-backend python-configparser python-dbus python-gi python-gobject python-gobject-2 python-ply python-pycparser sound-theme-freedesktop vorbis-tools mpd mpc apache2 php7.0 libapache2-mod-php7.0 mysql-server mysql-client php7.0-mysql phpmyadmin unzip -y && usermod -a -G audio www-data && echo 'Include /etc/phpmyadmin/apache.conf' >> /etc/apache2/apache2.conf && chown -R pi /var/www && cd /root && wget https://github.com/Anton-Kuscher/PiPlayer/archive/master.zip && unzip master.zip && rm /var/www/html/* && mv PiPlayer-master/home/pi/* /home/pi/ && mv PiPlayer-master/var/www/html/* /var/www/html/ && rm -r PiPlayer-master/ master.zip && exit
+
+########## && curl -s https://raw.githubusercontent.com/lukasjapan/bt-speaker/master/install.sh | bash
+
+#### && git clone https://github.com/bareinhard/super-simple-raspberry-pi-audio-receiver-install
+#### && cd super-simple-raspberry-pi-audio-receiver-install
+#### && git checkout stretch-fix
+#### && sudo ./install.sh

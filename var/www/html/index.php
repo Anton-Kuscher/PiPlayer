@@ -7,6 +7,7 @@
         <link rel="icon" href="https://www2.pic-upload.de/img/34289012/icon.png">
 
         <?php
+
         #Make Connection to database
         $con = mysqli_connect("localhost","root","raspipass","PiPlayer");
         $result = mysqli_query($con , "SELECT * FROM title_list");
@@ -26,15 +27,15 @@
         };
         function VolUp(){
             exec('mpc volume +5');
-        }
+        };
         function VolDown(){
             exec('mpc volume -5');
-        }
+        };
         function play_a_song($songname){
             exec('mpc clear');
             exec('mpc add '.$songname);
             Toggle();
-        }
+        };
 
         #Check for button Click
         if (isset($_POST['stop'])) {
@@ -57,12 +58,14 @@
         ?>
     </head>
     <body>
+
         <!-- The Bar ontop of the screen  -->
         <div class="topbar">
             <a href="/"><h1>PiPlayer</h1></a>
             <!-- Logo -->
             <img src="https://www2.pic-upload.de/img/34289012/icon.png" alt="">
         </div>
+
         <!-- The Bar on the bottom of the screen -->
         <div class="botbar">
             <form action="" method="POST" target="reload_iframe">
@@ -78,30 +81,25 @@
         </div>
 
         <div class="mainframe">
-            <!-- Main Boxes in formes of Text etc... -->
 
+            <!-- Main Boxes in formes of Text etc... -->
             <iframe id="reload_iframe" src="" name="reload_iframe" noscroll="True"></iframe>
 
             <?php
             #For every entry in the database list do ...
             while ($row=mysqli_fetch_array($result)) {
-                echo "<div class='titlebox'>
-                    <div class='namecontain'>
-                    <p>".$row['artist']." - ".$row['title']."</p>
-                    </div>
-                    <div class='buttoncontain'>
-                        <form target='reload_iframe' action='' method='POST'>
-                            <button name='play_song' value='".$row['filename']."' type='submit'><b>Play</b></button>
-                        </form>
-                    </div>
+            echo "<div class='titlebox'>
+                <div class='namecontain'>
+                <p>".$row['artist']." - ".$row['title']."</p>
                 </div>
-
-                ";
-                }
-
-            ?>
-
+                <div class='buttoncontain'>
+                    <form target='reload_iframe' action='' method='POST'>
+                        <button name='play_song' value='".$row['filename']."' type='submit'><b>Play</b></button>
+                    </form>
+                </div>
+            </div>
+                ";}?>
+        
         </div>
-
     </body>
 </html>
